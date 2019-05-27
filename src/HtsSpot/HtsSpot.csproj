@@ -30,4 +30,10 @@
       <ProjectReference Include="..\HtsSpot.Infrastructure\HtsSpot.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="starthtsspot.bat">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

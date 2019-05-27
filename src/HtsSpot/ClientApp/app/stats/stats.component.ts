@@ -30,11 +30,11 @@ export class StatsComponent implements OnInit {
             {field: 'name', header: 'Facility'},
             {field: 'county', header: 'County'},
             /*{field: 'partner', header: 'Partner'},*/
-            {field: 'emr', header: 'EMR'},
             {field: 'clientCount', header: 'Clients'},
             // {field: 'dateCreated', header: 'dateCreated'},
             {field: 'lastUpdate', header: 'Last Update'},
-            {field: 'timeAgo', header: ''}
+            {field: 'timeAgo', header: ''},
+            {field: 'emr', header: 'EMR'}
         ];
         this.loading = true;
         this.title = 'Site Uploads';
