@@ -1,6 +1,6 @@
 <p-breadcrumb [model]="bcItems" [home]="bcHome"></p-breadcrumb>
 <h3>{{ title }}  <span *ngIf="!loading">| Showing: {{ sites.totalRecords }}</span></h3>
-<button type="button" pButton icon="fa-file-o" iconPos="left" label="Export All" (click)="sites.exportCSV()"></button>
+<button type="button" pButton icon="fa fa-download" iconPos="left" label="Export All" (click)="sites.exportCSV()"></button>
 <p-messages [(value)]="errorMessage"></p-messages>
 <!--<p-dataTable [value]="facilities"
              sortField="stats.lastUpdate" [sortOrder]="-1"
@@ -28,12 +28,16 @@
     </ng-template>
 </p-dataTable>-->
 
-<p-table #sites [value]="facilities" resizableColumns="true" columnResizeMode="expand" [paginator]="true" [rows]="5">
-    <ng-template pTemplate="caption">
-        <div class="ui-helper-clearfix">
-            <button disabled="true"type="button" pButton icon="ui-icon-cloud-download" iconPos="left" label="Export" (click)="sites.exportCSV()" style="float:left" class="blue-btn"></button>
-        </div>
-    </ng-template>
+<p-table
+    [value]="facilities"
+    sortField="stats.lastUpdate" [sortOrder]="-1"
+    [loading]="loading"  loadingIcon="fa-spinner fa-pulse"
+    emptyMessage="No stats found" [responsive]="true"
+    [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true" [paginator]="true" [rows]="500"
+    [totalRecords]="recordCount"
+    exportFilename="DwapiHTSSpot"
+    #sites>
+
     <ng-template pTemplate="header">
         <tr>
             <th *ngFor="let col of cols" [pSortableColumn]="col.field">
@@ -41,11 +45,19 @@
                 <p-sortIcon [field]="col.field"></p-sortIcon>
             </th>
         </tr>
+        <tr>
+            <th *ngFor="let col of cols" [ngSwitch]="col.field">
+                <input *ngSwitchCase="'siteCode'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
+                <input *ngSwitchCase="'name'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
+                <input *ngSwitchCase="'county'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
+            </th>
+        </tr>
     </ng-template>
     <ng-template pTemplate="body" let-valid>
         <tr>
             <td *ngFor="let col of cols">
-                {{valid[col.field]}}
+                <span *ngIf="col.field=='lastUpdate'"> {{valid[col.field] | date: 'dd MMM yyyy'}}</span>
+                <span *ngIf="col.field!='lastUpdate'"> {{valid[col.field]}}</span>
             </td>
         </tr>
     </ng-template>

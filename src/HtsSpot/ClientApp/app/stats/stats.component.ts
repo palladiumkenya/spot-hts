@@ -25,16 +25,16 @@ export class StatsComponent implements OnInit {
 
     ngOnInit() {
         this.cols = [
-            {field: 'id', header: 'id'},
-            {field: 'siteCode', header: 'siteCode'},
-            {field: 'name', header: 'name'},
-            {field: 'county', header: 'county'},
-            {field: 'partner', header: 'partner'},
-            {field: 'emr', header: 'emr'},
-            {field: 'clientCount', header: 'clientCount'},
-            {field: 'dateCreated', header: 'dateCreated'},
-            {field: 'lastUpdate', header: 'lastUpdate'},
-            {field: 'timeAgo', header: 'timeAgo'}
+            // {field: 'id', header: 'id'},
+            {field: 'siteCode', header: 'MFL'},
+            {field: 'name', header: 'Facility'},
+            {field: 'county', header: 'County'},
+            /*{field: 'partner', header: 'Partner'},*/
+            {field: 'emr', header: 'EMR'},
+            {field: 'clientCount', header: 'Clients'},
+            // {field: 'dateCreated', header: 'dateCreated'},
+            {field: 'lastUpdate', header: 'Last Update'},
+            {field: 'timeAgo', header: ''}
         ];
         this.loading = true;
         this.title = 'Site Uploads';
