@@ -17,7 +17,7 @@ namespace HtsSpot.Infrastructure.Data
 
         public IEnumerable<FacilityStats> GetAll()
         {
-          return  _context.FacilityStatses.AsNoTracking();
+            return _context.FacilityStatses.AsNoTracking().OrderByDescending(x => x.LastUpdate);
         }
 
         public Task<int> GetCount()
