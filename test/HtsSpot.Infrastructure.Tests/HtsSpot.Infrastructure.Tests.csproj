@@ -28,5 +28,16 @@
         <PackageReference Include="FluentValidationExtensions" Version="1.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\HtsSpot.Core\HtsSpot.Core.csproj" />
+      <ProjectReference Include="..\..\src\HtsSpot.Infrastructure\HtsSpot.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 
 </Project>
