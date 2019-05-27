@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using HtsSpot.Core.Domain.Stats;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +18,11 @@ namespace HtsSpot.Infrastructure.Data
         public IEnumerable<FacilityStats> GetAll()
         {
           return  _context.FacilityStatses.AsNoTracking();
+        }
+
+        public Task<int> GetCount()
+        {
+            return _context.FacilityStatses.AsNoTracking().Select(x => x.Id).CountAsync();
         }
     }
 }
