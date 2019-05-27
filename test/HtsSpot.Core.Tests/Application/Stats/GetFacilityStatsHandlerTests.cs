@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using HtsSpot.Core.Application.Stats.Queries;
-using HtsSpot.Core.Domain.Stats;
 using MediatR;
 using NUnit.Framework;
 using Microsoft.Extensions.DependencyInjection;

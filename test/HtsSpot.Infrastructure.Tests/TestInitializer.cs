@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
-using AutoMapper;
 using HtsSpot.Core.Domain.Stats;
 using HtsSpot.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;

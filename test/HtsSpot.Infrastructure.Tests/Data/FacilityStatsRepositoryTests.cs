@@ -24,5 +24,12 @@ namespace HtsSpot.Infrastructure.Tests.Data
             Assert.True(stats.Any());
             stats.ForEach(Console.WriteLine);
         }
+
+        [Test]
+        public void should_GetCount()
+        {
+            var stats = _repository.GetCount().Result;
+            Assert.True(stats>0);
+        }
     }
 }
