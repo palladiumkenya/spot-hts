@@ -27,7 +27,7 @@
               "ClientApp/assets"
             ],
             "styles": [
-                "node_modules/primeng/resources/themes/nova-light/theme.css",
+                "node_modules/primeng/resources/themes/luna-pink/theme.css",
                 "node_modules/primeng/resources/primeng.css",
                 "node_modules/fullcalendar/dist/fullcalendar.css",
                 "node_modules/quill/dist/quill.snow.css",
