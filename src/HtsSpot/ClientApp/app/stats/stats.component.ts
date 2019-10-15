@@ -29,7 +29,7 @@ export class StatsComponent implements OnInit {
             {field: 'siteCode', header: 'MFL'},
             {field: 'name', header: 'Facility'},
             {field: 'county', header: 'County'},
-            /*{field: 'partner', header: 'Partner'},*/
+            {field: 'partner', header: 'Partner'},
             {field: 'clientCount', header: 'Clients'},
             // {field: 'dateCreated', header: 'dateCreated'},
             {field: 'lastUpdate', header: 'Last Update'},
