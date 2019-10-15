@@ -28,6 +28,7 @@
                 <input *ngSwitchCase="'siteCode'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
                 <input *ngSwitchCase="'name'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
                 <input *ngSwitchCase="'county'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
+                <input *ngSwitchCase="'partner'" pInputText type="text" (input)="sites.filter($event.target.value, col.field, 'contains')">
             </th>
         </tr>
     </ng-template>
