@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://data.kenyahmis.org:5700",
+    "target": "http://localhost:5700",
     "secure": false
   }
 }
